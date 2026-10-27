@@ -1,0 +1,146 @@
+{
+  "dataset_name": "AgriPrice AI Tamil Nadu Cleaned Market Prices",
+  "source": {
+    "file_path": "C:\\Users\\user\\Desktop\\Agri-price-AI\\backend\\data\\fixtures\\synthetic_test_market_data.csv",
+    "is_synthetic_fixture": true,
+    "source_type_description": "Synthetic Test Fixture (Clearly Labeled - For Pipeline Verification Only)"
+  },
+  "date_coverage": {
+    "start_date": "2026-10-01",
+    "end_date": "2026-10-22",
+    "total_calendar_days_span": 21
+  },
+  "row_count": {
+    "raw_total_rows": 10,
+    "cleaned_tamil_nadu_rows": 8,
+    "duplicate_records_detected": 1,
+    "suspicious_records_flagged": 1
+  },
+  "commodity_count": {
+    "unique_commodities_count": 6,
+    "commodities_list": [
+      "Brinjal",
+      "Coconut",
+      "Paddy",
+      "Small Onion",
+      "Tomato",
+      "Turmeric"
+    ],
+    "records_per_commodity": {
+      "Tomato": 3,
+      "Small Onion": 1,
+      "Turmeric": 1,
+      "Coconut": 1,
+      "Paddy": 1,
+      "Brinjal": 1
+    }
+  },
+  "market_count": {
+    "unique_markets_count": 5,
+    "unique_districts_count": 5,
+    "districts_list": [
+      "Coimbatore",
+      "Dindigul",
+      "Erode",
+      "Madurai",
+      "Thanjavur"
+    ],
+    "records_per_market": {
+      "Ottanchatram": 4,
+      "Erode": 1,
+      "Pollachi": 1,
+      "Thanjavur": 1,
+      "Paravai": 1
+    }
+  },
+  "missing_value_statistics": {
+    "state": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "district": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "market": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "commodity": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "variety": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "date": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "min_price": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "max_price": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "modal_price": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "arrivals": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "unit": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "is_modal_derived": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "is_suspicious_record": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "suspicious_reasons": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "is_synthetic": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "data_source": {
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    }
+  },
+  "price_target_summary": {
+    "target_variable": "modal_price",
+    "unit": "Rs/Quintal",
+    "min_rs_per_quintal": 2100.0,
+    "max_rs_per_quintal": 13600.0,
+    "mean_rs_per_quintal": 5068.75,
+    "median_rs_per_quintal": 3450.0
+  },
+  "suspicious_records_summary": {
+    "total_flagged_count": 1,
+    "flagged_percentage": 12.5,
+    "reasons": {
+      "min_price (4500.0) > max_price (3200.0)": 1,
+      "modal_price (3800.0) significantly below min_price (4500.0)": 1,
+      "modal_price (3800.0) significantly above max_price (3200.0)": 1
+    }
+  },
+  "unit_consistency": {
+    "standardized_unit": "Rs/Quintal (100 kg)",
+    "units_detected_in_raw": [
+      "Rs/Quintal"
+    ],
+    "normalization_applied": "All prices normalized to Rs/Quintal (Ton converted via 0.1x multiplier, Kg converted via 100x multiplier)"
+  }
+}

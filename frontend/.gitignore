@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Node.js
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Local editor files
+.vscode/
+.idea/
+.DS_Store

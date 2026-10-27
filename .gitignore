@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Frontend
+node_modules/
+dist/
+
+# Editors
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+venv/
+.venv/
+__pycache__/
+node_modules/
+dist/
+backend/app/ml/artifacts/model.joblib

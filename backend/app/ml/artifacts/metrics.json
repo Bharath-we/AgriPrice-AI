@@ -1,0 +1,188 @@
+{
+  "model_name": "AgriPrice AI Tamil Nadu Random Forest Time-Series Predictor",
+  "algorithm": "RandomForestRegressor + ColumnTransformer",
+  "evaluation_strategy": "Strict Chronological Split (Train 70%, Val 15%, Test 15%) - Zero Future Data Leakage",
+  "dataset_metadata": {
+    "dataset_path": "C:\\Users\\user\\Desktop\\Agri-price-AI\\backend\\data\\processed\\tn_agri_market_prices.csv",
+    "total_records_loaded": 69700,
+    "raw_rows_found": 69700,
+    "invalid_prices_excluded": 0,
+    "duplicates_removed": 0,
+    "date_range": {
+      "start": "2023-01-01",
+      "end": "2026-10-24"
+    },
+    "commodity_count": 10,
+    "market_count": 10,
+    "is_synthetic": false
+  },
+  "split_periods": {
+    "train_period": {
+      "start": "2023-01-31",
+      "end": "2025-09-05",
+      "samples": 142500
+    },
+    "val_period": {
+      "start": "2025-09-07",
+      "end": "2026-03-28",
+      "samples": 30600
+    },
+    "test_period": {
+      "start": "2026-03-30",
+      "end": "2026-10-18",
+      "samples": 29000
+    }
+  },
+  "test_evaluation": {
+    "test_start_date": "2026-03-30",
+    "test_end_date": "2026-10-18",
+    "test_observations": 29000,
+    "baseline_last_observed_price": {
+      "mae_rs_per_quintal": 338.99,
+      "rmse_rs_per_quintal": 627.09
+    },
+    "random_forest_model": {
+      "mae_rs_per_quintal": 128.62,
+      "rmse_rs_per_quintal": 205.12,
+      "r2_score": 0.9966
+    },
+    "overall_improvement_vs_baseline_pct": 62.06,
+    "horizon_breakdown": {
+      "7_day": {
+        "samples": 10200,
+        "baseline_mae": 204.82,
+        "rf_mae": 119.69,
+        "rf_rmse": 193.41,
+        "improvement_vs_baseline_pct": 41.56,
+        "evaluation_status": "RESPONSIBLY_EVALUATED"
+      },
+      "15_day": {
+        "samples": 9800,
+        "baseline_mae": 315.59,
+        "rf_mae": 128.73,
+        "rf_rmse": 203.58,
+        "improvement_vs_baseline_pct": 59.21,
+        "evaluation_status": "RESPONSIBLY_EVALUATED"
+      },
+      "30_day": {
+        "samples": 9000,
+        "baseline_mae": 516.54,
+        "rf_mae": 138.63,
+        "rf_rmse": 219.19,
+        "improvement_vs_baseline_pct": 73.16,
+        "evaluation_status": "RESPONSIBLY_EVALUATED"
+      }
+    },
+    "commodity_breakdown": {
+      "banana": {
+        "test_samples": 2900,
+        "baseline_mae": 178.12,
+        "rf_mae": 82.68,
+        "improvement_pct": 53.58
+      },
+      "bellary_onion": {
+        "test_samples": 2900,
+        "baseline_mae": 197.32,
+        "rf_mae": 98.98,
+        "improvement_pct": 49.84
+      },
+      "coconut": {
+        "test_samples": 2900,
+        "baseline_mae": 179.06,
+        "rf_mae": 83.33,
+        "improvement_pct": 53.46
+      },
+      "green_chilli": {
+        "test_samples": 2900,
+        "baseline_mae": 563.72,
+        "rf_mae": 174.84,
+        "improvement_pct": 68.98
+      },
+      "paddy": {
+        "test_samples": 2900,
+        "baseline_mae": 112.7,
+        "rf_mae": 38.89,
+        "improvement_pct": 65.49
+      },
+      "potato": {
+        "test_samples": 2900,
+        "baseline_mae": 159.54,
+        "rf_mae": 74.93,
+        "improvement_pct": 53.03
+      },
+      "small_onion": {
+        "test_samples": 2900,
+        "baseline_mae": 577.75,
+        "rf_mae": 211.48,
+        "improvement_pct": 63.4
+      },
+      "tapioca": {
+        "test_samples": 2900,
+        "baseline_mae": 83.45,
+        "rf_mae": 32.18,
+        "improvement_pct": 61.44
+      },
+      "tomato": {
+        "test_samples": 2900,
+        "baseline_mae": 469.01,
+        "rf_mae": 121.31,
+        "improvement_pct": 74.13
+      },
+      "turmeric": {
+        "test_samples": 2900,
+        "baseline_mae": 869.25,
+        "rf_mae": 367.59,
+        "improvement_pct": 57.71
+      }
+    }
+  },
+  "prediction_interval_calibration": {
+    "method": "Empirical validation residual distribution",
+    "interval_80_percent_residuals": {
+      "lower_delta": -199.98,
+      "upper_delta": 206.74
+    },
+    "interval_95_percent_residuals": {
+      "lower_delta": -478.75,
+      "upper_delta": 517.3
+    }
+  },
+  "preprocessing_configuration": {
+    "categorical_features": [
+      "commodity",
+      "market",
+      "target_season"
+    ],
+    "numerical_features": [
+      "last_observed_price",
+      "lag_7d",
+      "lag_14d",
+      "lag_30d",
+      "rolling_mean_7d",
+      "rolling_std_7d",
+      "rolling_mean_14d",
+      "rolling_mean_30d",
+      "price_momentum_7d",
+      "price_momentum_14d",
+      "arrival_at_origin",
+      "rolling_arrival_mean_7d",
+      "horizon_days",
+      "target_month",
+      "target_day_of_year",
+      "target_month_sin",
+      "target_month_cos"
+    ],
+    "target": "actual_target_price",
+    "fitted_on": "X_train strictly"
+  },
+  "limitations_and_warnings": {
+    "high_volatility_warnings": [],
+    "documented_limitations": [
+      "Unpredictable weather shocks: Severe unseasonal monsoon rains and cyclones cannot be forecasted solely from historical price trends.",
+      "Horizon degradation: Uncertainty expands progressively from 7-day to 15-day and 30-day forecast horizons.",
+      "Minimum history requirement: Requires at least 45 consecutive observations for 7-day, 90 for 15-day, and 180 for 30-day forecasting.",
+      "Decision support advisory: The Sell vs Hold recommendations represent statistical guidance and must not be treated as guaranteed financial returns."
+    ]
+  },
+  "trained_at": "2026-10-27T19:42:32.683192"
+}

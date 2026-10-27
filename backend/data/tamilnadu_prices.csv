@@ -1,0 +1,9 @@
+state,district,market,commodity,variety,date,min_price,max_price,modal_price,arrivals,unit,is_modal_derived,is_suspicious_record,suspicious_reasons,is_synthetic,data_source
+Tamil Nadu,Dindigul,Ottanchatram,Tomato,Hybrid Local,2026-10-01,1800.0,2400.0,2100.0,850.5,Rs/Quintal,False,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Dindigul,Ottanchatram,Tomato,Hybrid Local,2026-10-02,1900.0,2600.0,2250.0,790.0,Rs/Quintal,False,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Dindigul,Ottanchatram,Small Onion,Co-4 / Podisu,2026-10-05,4200.0,5400.0,4800.0,420.0,Rs/Quintal,False,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Erode,Erode,Turmeric,Finger,2026-10-12,12500.0,14800.0,13600.0,350.0,Rs/Quintal,False,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Dindigul,Ottanchatram,Tomato,Country,2026-10-15,7500.0,9200.0,8500.0,120.0,Rs/Quintal,False,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Coimbatore,Pollachi,Coconut,Grade-A,2026-10-18,2800.0,3400.0,3100.0,15.0,Rs/Quintal,False,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Thanjavur,Thanjavur,Paddy,Common / Adt-37,2026-10-20,2200.0,2600.0,2400.0,1200.0,Rs/Quintal,True,False,,True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
+Tamil Nadu,Madurai,Paravai,Brinjal,Local,2026-10-22,4500.0,3200.0,3800.0,180.0,Rs/Quintal,False,True,min_price (4500.0) > max_price (3200.0); modal_price (3800.0) significantly below min_price (4500.0); modal_price (3800.0) significantly above max_price (3200.0),True,SYNTHETIC_TEST_FIXTURE_NOT_OFFICIAL
