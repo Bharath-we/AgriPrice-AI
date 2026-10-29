@@ -25,3 +25,21 @@ __pycache__/
 node_modules/
 dist/
 backend/app/ml/artifacts/model.joblib
+# Python environment
+backend/venv/
+backend/.venv/
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+
+# Large ML model
+backend/app/ml/artifacts/*.joblib
+backend/app/ml/artifacts/*.pkl
