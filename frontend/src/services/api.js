@@ -3,7 +3,9 @@
  * Connects to FastAPI backend with fail-safe defaults
  */
 
-const API_BASE = "http://127.0.0.1:8001/api";
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  "http://127.0.0.1:8001/api";
 
 export async function fetchCommodities() {
   try {
